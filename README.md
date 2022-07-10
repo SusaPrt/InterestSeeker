@@ -9,6 +9,8 @@ UniboMappe fornisce un elenco georeferenziato di luoghi come biblioteche, musei 
 
 Link Open Data: <link> https://www.dati.gov.it/view-dataset/dataset?id=e07b87fc-f627-414e-bfb9-421c5fd5aaaa
 
+Il progetto è stato sviluppato su Glitch, link: <link> https://interest-seeker.glitch.me
+
 ## Descrizione
 Interest Seeker è un'applicazione Web in JavaScript realizzata con il framework NodeJS. 
 Le funzionalità del progetto sono:

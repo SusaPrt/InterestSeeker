@@ -5,11 +5,14 @@
 ## Introduzione
 Il progetto **Interest Seeker** rappresenta una Restful API con l'obiettivo di fornire informazioni e posizione su "luoghi di interesse".
 L'idea parte da un Open Data distruibuito dal sito **dati.gov.it** e fornito dall' Università di Bologna.
-UniboMappe fornisce un elenco georeferenziato di luoghi come biblioteche, musei e uffici collocati nelle zone limitrofe al capoluogo.
+UniboMappe fornisce un elenco georeferenziato di luoghi come biblioteche, musei e uffici collocati nelle zone limitrofe al capoluogo. Il progetto è stato sviluppato su Glitch.
 
 Link Open Data: <link> https://www.dati.gov.it/view-dataset/dataset?id=e07b87fc-f627-414e-bfb9-421c5fd5aaaa
 
-Il progetto è stato sviluppato su Glitch, link: <link> https://interest-seeker.glitch.me
+
+Link Web Site: <link> https://interest-seeker.glitch.me
+
+Link Glitch Code: <link> https://glitch.com/edit/#!/interest-seeker
 
 ## Descrizione
 Interest Seeker è un'applicazione Web in JavaScript realizzata con il framework NodeJS. 

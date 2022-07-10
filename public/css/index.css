@@ -1,0 +1,63 @@
+body,html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  background-image: url("https://cdn.glitch.global/01f92e01-3f7e-4995-a394-97810a2e391a/Tavola%20da%20disegno%201.png?v=1657457627147");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.titleContainer {
+  color: white;
+  background-color: black;
+  padding: inherit;
+  width: 540px;
+  font-size: 300%; 
+  margin-left:30px;
+}
+
+#biotxt {
+  font-size: 200%;
+  margin-left:30px
+}
+
+#ghLink{
+  color: blue;
+}
+
+.operation {
+    border: 3px solid #ffffff;
+    padding: 20px;
+}
+
+.edit, .map {
+  border: 1px solid;
+  padding: 8px;
+  width: 320px;
+  border-radius: 10px;
+  font-size: 160%;
+  margin-left: 85px;
+  float: left;
+  background: white;
+  box-shadow: 0 0 10px #777777;
+
+}
+
+
+
+#editBtn, #mapBtn{
+    box-shadow: 0 0 10px #777777;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 120%;
+    padding: 2%;
+    width: auto;
+    height: auto;
+    background: white;
+    color: black;
+    border: 2px solid;
+    border-color: black;
+    text-transform: capitalize;   
+}

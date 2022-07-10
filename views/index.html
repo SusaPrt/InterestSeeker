@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Seeker</title>
+</head>
+<body>
+    <div class="titleContainer">
+        <h1 id="title" >Interest Seeker</h1>
+    </div>
+
+    <div class="home">
+        <p id="biotxt">
+          Interest Seeker is a simple Restfull API that consent you to check data of registered locations <br>
+          Allows to share and discover new places in our territory
+          <br>
+          <br>
+          Check the Git Hub repository to view the code:
+          <a id="ghLink" href="https://github.com/SusaPrt/InterestSeeker">Link</a>
+          <br>
+          <hr> <br>
+        </p>
+    </div>
+    <br>
+  
+    <div class="operations">
+      <div class="edit">
+        <p id="opBio"> 
+            Add a new place
+        </p>
+        <form action="/op">
+            <button type="submit" id="editBtn"> Edit</button> 
+        </form>
+    </div>
+    
+    <div class="map">
+        <p id="mapBio">
+            View the map of all saved places
+        </p>
+        <form action="/map">
+            <button type="submit" id="mapBtn"> Map</button>
+        </form>
+    </div>
+  </div>
+    
+</body>
+</html>

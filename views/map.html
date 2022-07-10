@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Map of places" content="View the map of locations">
+    
+    <title>Interest Seeker</title>
+    
+    <!-- <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+  </head>
+  
+  <body>
+    <br>
+    <div class="titleContainer">
+      <h1 id="title">Location Map</h1>
+    </div>
+    
+    <form action="/">
+            <button type="submit" id="backBtn"> Back</button> 
+    </form>
+    <hr>
+    <main>
+      <div id="mapid"></div>
+      
+      <script>
+        const attribution ='&copy; <a href="htts://www.openstreetmap.org/copyright"> OpenStreetMap </a>contributors';
+        const tUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        const tiles = L.tileLayer(tUrl, {attribution})
+        var map = L.map('mapid');
+        tiles.addTo(map);
+        const lat = 44.50123646070089
+        const lon = 11.29871871925647
+        map.setView([lat, lon], 7)
+        
+        window.addEventListener('load', setUpLocations)
+        
+        async function setUpLocations() {
+          const response = await fetch("/db/locations")
+          const locations = await response.json()
+          
+          for(let i = 0; i < locations.length; i++) {
+            var lon = locations[i].lon;
+            var lat = locations[i].lat;
+            var description = locations[i].type + "<br>" + locations[i].name + "<br>" + locations[i].address + "<br>" + locations[i].city
+            if((!isNaN(lat) && !isNaN(lon)) && (!(lat === null) && !(lon === null))) {
+              var markerLocation = new L.LatLng(lat, lon);
+              var marker = new L.Marker(markerLocation);
+              map.addLayer(marker);
+              marker.bindPopup(description);
+            } 
+          }
+        }
+        
+      </script>
+    </main>
+  </body>
+</html>

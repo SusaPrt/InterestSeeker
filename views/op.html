@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/op.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Seeker</title>
+</head>
+
+<body>
+  <div class="titleContainer">
+    <h1 id="title">Edit the data</h1>
+  </div>
+  
+  <p id="opBio">
+      The add operation is based on checking the name <br>
+      In case that the place is already registered, the post request will fail <br>
+  </p>
+  
+  <form action="/">
+   <button type="submit" id="backBtn"> Back</button> 
+  </form>
+  <hr>
+  <br><br>
+  <div class="add">
+    <p id="addTitle">Enter the data</p>
+    <form action="https://interest-seeker.glitch.me/addLocation" method="POST" class="addPlace" id="add">
+      <input class="input" type="txt" id="placeType" name="type" placeholder="Type" required> <br>
+      <input class="input" type="txt" id="placeName" name="name" placeholder="Name" required> 
+      <input class="input" type="txt" id="placeAddress" name="address" placeholder="Address" required> <br>
+      <input class="input" type="txt" id="placeCity" name="city" placeholder="City" required>
+      <input class="input" type="txt" id="placeLat" name="lat" placeholder="Latitude" required> <br>
+      <input class="input" type="txt" id="placeLon" name="lon" placeholder="Longitude" required> 
+      <input class="input" type="txt" id="placeUrl" name="url" placeholder="Web Site"> <br>
+      <input class="input" type="txt" id="placeNotes" name="notes" placeholder="Notes">
+      <button id="addBtn" class="btn">Add</button>
+    </form>
+  </div>
+    
+  
+  <p id="list"></p>
+  <script>
+    window.addEventListener('load', viewLocations)
+    async function viewLocations() {
+      const response = await fetch("/db/locations")
+      const locations = await response.json()
+        
+      for(let i=0; i<locations.length; i++) {
+        var description = "Type: " + locations[i].type + "<br>" + "Name: " + locations[i].name + "<br>" + "Address: " + locations[i].address + "<br>" + "City: " + locations[i].city + "<br>"
+        if(locations[i].url != undefined)
+          description += "Web Site: " + locations[i].url + "<br>"
+        description += locations[i].notes + "<br><br>";
+        const par = document.getElementById("list");
+        par.innerHTML += description;
+      }
+    }
+  </script>
+ 
+  
+  </body>
+</html>

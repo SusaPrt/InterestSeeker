@@ -1,8 +1,8 @@
 # Progetto di Piattaforme per la Gestione del Territorio
 ## Susanna Peretti
 ## Matricola: 306186
-
 ## Introduzione
+
 Il progetto **Interest Seeker** rappresenta una Restful API con l'obiettivo di fornire informazioni e posizione su "luoghi di interesse".
 L'idea parte da un Open Data distruibuito dal sito **dati.gov.it** e fornito dall' Università di Bologna.
 UniboMappe fornisce un elenco georeferenziato di luoghi come biblioteche, musei e uffici collocati nelle zone limitrofe al capoluogo. Il progetto è stato sviluppato su Glitch.
@@ -14,19 +14,20 @@ Link Web Site: <link> https://interest-seeker.glitch.me
 Link Glitch Code: <link> https://glitch.com/edit/#!/interest-seeker
 
 ## Descrizione
-Interest Seeker è un'applicazione Web in JavaScript realizzata con il framework NodeJS. 
+
+Interest Seeker è un'applicazione Web in JavaScript realizzata con il framework NodeJS.
 Le funzionalità del progetto sono:
+
 - aggiungere una location al database
 - visualizzare una mappa con le posizioni
 - fornire una lista completa di informazioni dei luoghi
 
 ## Progetto:
-- **server.js**:    server che risponde alle HTTP Requests
-- **map.json**:     file json che opera da database
-- **views/**:       directory contentente i file .html
-- **public/css/**:  directory contenente i file .css
-- **Assets di Glitch**:     contiene l'immagine utilizzata in background
-
+- **server.js**: server che risponde alle HTTP Requests
+- **map.json**: file json che opera da database
+- **views/**: directory contentente i file .html
+- **public/css/**: directory contenente i file .css
+- **Assets di Glitch**: contiene l'immagine utilizzata in background
 
 ## Dipendenze
 - **Express.js**: framework open-source Node.js per la programmazione di applicazioni web e mobile, consente di creare potenti API di routing e di impostare middleware per rispondere alle richieste HTTP.
@@ -37,9 +38,9 @@ Le funzionalità del progetto sono:
 - **csv-parse**: è un parser che converte l'input di testo CSV in array o oggetti
 
 ## Struttura del file map.json
-| type     | name     | address     | city      | lat      | lon      | url     | notes     |
-|-------|-------|----------|-------|------|------|------|--------|
-| museo  | Collezione di Anatomia Comparata  | Via Selmi, 3 - 40126 Bologna  | Bologna  | 44.496113  | 11.354331  | https://sma.unibo.it/it/il-sistema-museale/collezione-di-anatomia-comparata/collezione-di-anatomia-comparata  |  |
+| type  | name                             | address                      | city    | lat       | lon       | url                                                                                                          | notes |
+| ----- | -------------------------------- | ---------------------------- | ------- | --------- | --------- | ------------------------------------------------------------------------------------------------------------ | ----- |
+| museo | Collezione di Anatomia Comparata | Via Selmi, 3 - 40126 Bologna | Bologna | 44.496113 | 11.354331 | https://sma.unibo.it/it/il-sistema-museale/collezione-di-anatomia-comparata/collezione-di-anatomia-comparata |       |
 
 ## HTML e CSS
 Per il progetto sono state realizzate 3 diverse pagine .html con relativi file css
@@ -48,10 +49,12 @@ Per il progetto sono state realizzate 3 diverse pagine .html con relativi file c
 - op.html -> al loading della pagina la funzione asincrona viewLocations fornisce le informazioni relative a tutte le location. Inoltre è presente il form per l'inserimento dei dati richiesti e aggiungere una location al database
 
 ## Endpoint di Operazioni CRUD
+
 ### GET: per richiamare la view
-- app.get("/")    
-- app.get('/map')  
-- app.get('/op')     
+
+- app.get("/")
+- app.get('/map')
+- app.get('/op')
 
 ### GET: per ottenere il parser del file map.json
 app.get('/db/locations')

@@ -9,7 +9,6 @@ UniboMappe fornisce un elenco georeferenziato di luoghi come biblioteche, musei 
 
 Link Open Data: <link> https://www.dati.gov.it/view-dataset/dataset?id=e07b87fc-f627-414e-bfb9-421c5fd5aaaa
 
-
 Link Web Site: <link> https://interest-seeker.glitch.me
 
 Link Glitch Code: <link> https://glitch.com/edit/#!/interest-seeker

@@ -1,4 +1,4 @@
-# Progetto di Piattaforme per la Gestione del Territorio
+# Progetto di Piattaforme Digitali per la Gestione del Territorio
 ## Susanna Peretti
 ## Matricola: 306186
 ## Introduzione

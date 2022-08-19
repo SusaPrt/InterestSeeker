@@ -22,7 +22,7 @@ Le funzionalità del progetto sono:
 - visualizzare una mappa con le posizioni
 - fornire una lista completa di informazioni dei luoghi
 
-## Progetto:
+## Progetto
 - **server.js**: server che risponde alle HTTP Requests
 - **map.json**: file json che opera da database
 - **views/**: directory contentente i file .html
@@ -50,22 +50,22 @@ Per il progetto sono state realizzate 3 diverse pagine .html con relativi file c
 
 ## Endpoint di Operazioni CRUD
 
-### GET: per richiamare la view
+### GET per richiamare la view
 
 - app.get("/")
 - app.get('/map')
 - app.get('/op')
 
-### GET: per ottenere il parser del file map.json
+### GET per ottenere il parser del file map.json
 app.get('/db/locations')
 
-### POST: aggiunge una location al database, inserendo i dati opportuni (Sito Web e Note non sono obbligatori)
+### POST per aggiungere una location al database, inserendo i dati opportuni (Sito Web e Note non sono obbligatori)
 app.post('/addLocation')
 
 <sup>La validazione dell'inserimento avviene sul nome del luogo, se esso è già presente nell'elenco l'operazione di POST fallirà</sup>
 
-### DELETE: rimuove la location il cui nome corrisponde a quello inserito come parametro name
+### DELETE per rimuovere la location il cui nome corrisponde a quello inserito come parametro name
 app.delete('/removeLocation/:name')
 
-### PUT: modifica la location il cui nome corrisponde al .name del body della richiesta
+### PUT per modificare la location il cui nome corrisponde al .name del body della richiesta
 app.put('/editLocation/')
